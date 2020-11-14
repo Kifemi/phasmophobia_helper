@@ -4,12 +4,12 @@ import "../styles/evidence.css"
 
 class Evidence extends Component {
 
-  handleClick(event) {
+  handleEvidenceClick(event) {
     this.props.evidenceSelector(this.props.evidence);
     event.preventDefault();
   }
 
-  checkIfSelected() {
+  checkIfEvidenceIsSelected() {
     if(this.props.selectedEvidence.includes(this.props.evidence.id)) {
       return true;
     } else {
@@ -17,10 +17,22 @@ class Evidence extends Component {
     }
   }
 
+  checkGhostSelection(ghost) {
+    if(ghost) {
+      if(ghost.evidences.includes(this.props.evidence.id) && !this.checkIfEvidenceIsSelected()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    
+  }
+
   render() {
     return(
       <div className={`evidenceBox 
-        ${this.checkIfSelected() ? "selected" : ""} `} onClick={this.handleClick.bind(this)} >
+        ${this.checkIfEvidenceIsSelected() ? "selectedEvidence" : ""} 
+        ${this.checkGhostSelection(this.props.selectedGhost) ? "evidencesForGhost" : "" }`} onClick={this.handleEvidenceClick.bind(this)} >
         {this.props.evidence.name}
       </div>
     );

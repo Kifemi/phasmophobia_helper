@@ -1,7 +1,7 @@
 .ghostBox {
   border: 1px solid white;
-  width: 150px;
-  height: 80px;
+  width: 250px;
+  height: 150px;
   font-size: 20px;
   padding: 5px;
   margin-top: 10px;
@@ -9,4 +9,14 @@
   margin-right: 5px;
   vertical-align: middle;
   text-align: center;
+}
+
+.selectedGhost {
+  color: black;
+  background-color: yellow;
+}
+
+.ghostInfo {
+  font-size: 15px;
+  text-align: left;
 }

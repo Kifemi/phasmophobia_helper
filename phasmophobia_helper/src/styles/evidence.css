@@ -1,5 +1,5 @@
 .evidenceBox {
-  border: 1px solid white;
+  border: 1px solid red;
   width: 150px;
   height: 80px;
   font-size: 20px;
@@ -11,6 +11,11 @@
   text-align: center;
 }
 
-.selected {
+.selectedEvidence {
   border: 2px solid green;
+}
+
+.evidencesForGhost {
+  background-color: yellow;
+  color: black;
 }
