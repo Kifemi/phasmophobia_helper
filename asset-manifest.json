@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/phasmophobia_helper/static/css/main.55f95b93.chunk.css",
+    "main.js": "/phasmophobia_helper/static/js/main.5c0e3b44.chunk.js",
+    "main.js.map": "/phasmophobia_helper/static/js/main.5c0e3b44.chunk.js.map",
+    "runtime-main.js": "/phasmophobia_helper/static/js/runtime-main.1d6ee0b5.js",
+    "runtime-main.js.map": "/phasmophobia_helper/static/js/runtime-main.1d6ee0b5.js.map",
+    "static/js/2.d664aed3.chunk.js": "/phasmophobia_helper/static/js/2.d664aed3.chunk.js",
+    "static/js/2.d664aed3.chunk.js.map": "/phasmophobia_helper/static/js/2.d664aed3.chunk.js.map",
+    "index.html": "/phasmophobia_helper/index.html",
+    "static/css/main.55f95b93.chunk.css.map": "/phasmophobia_helper/static/css/main.55f95b93.chunk.css.map",
+    "static/js/2.d664aed3.chunk.js.LICENSE.txt": "/phasmophobia_helper/static/js/2.d664aed3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d6ee0b5.js",
+    "static/js/2.d664aed3.chunk.js",
+    "static/css/main.55f95b93.chunk.css",
+    "static/js/main.5c0e3b44.chunk.js"
+  ]
+}
