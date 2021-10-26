@@ -17,11 +17,11 @@ export function initGhosts() {
   var Goryo = { name: "Goryo", id: 13, evidences: [1,5,7], Str: "DOTS only through camera when no players around", Weak: "Doesn't wander far" };
   var Hantu = { name: "Hantu", id: 14, evidences: [2,4,5], Str: "Faster in low temperatures", Weak: "Slower in warmer areas" };
   var Myling = { name: "Myling", id: 15, evidences: [1,5,6], Str: "Quieter footsteps", Weak: "Causes paranormal sounds often" };
-  var Obake = { name: "Obake", id: 17, evidences: [1,2,5], Str: "Rarely leaves traces from interactions", Weak: "Sometimes leaves unique evidence" };
-  var Onryo = { name: "Onryo", id: 18, evidences: [2,3,4], Str: "Extinguishing a flame might cause a hunt", Weak: "Less likely to hunt when threatened" };
-  var Raiju = { name: "Raiju", id: 19, evidences: [1,2,7], Str: "Faster near electrical devices", Weak: "Distrupts electronics" };
-  var TheTwins = { name: "Twins", id: 20, evidences: [1,3,4], Str: "Both twins can hunt", Weak: "Often two interactions at the same time" };
-  var Yokai = { name: "Yokai", id: 21, evidences: [2,3,7], Str: "Talking near it may cause hunt", Weak: "Limited hearing during hunt" };
+  var Obake = { name: "Obake", id: 16, evidences: [1,2,5], Str: "Rarely leaves traces from interactions", Weak: "Sometimes leaves unique evidence" };
+  var Onryo = { name: "Onryo", id: 17, evidences: [2,3,4], Str: "Extinguishing a flame might cause a hunt", Weak: "Less likely to hunt when threatened" };
+  var Raiju = { name: "Raiju", id: 18, evidences: [1,2,7], Str: "Faster near electrical devices", Weak: "Distrupts electronics" };
+  var TheTwins = { name: "Twins", id: 19, evidences: [1,3,4], Str: "Both twins can hunt", Weak: "Often two interactions at the same time" };
+  var Yokai = { name: "Yokai", id: 20, evidences: [2,3,7], Str: "Talking near it may cause hunt", Weak: "Limited hearing during hunt" };
   ghosts.push(Spirit, Wraith, Phantom, Poltergeist, Banshee, Jinn, Mare, Revenant, Shade, Demon, Yurei, Oni, Goryo, Hantu, Myling, Obake,
     Onryo, Raiju, TheTwins, Yokai);
 
