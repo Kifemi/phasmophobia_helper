@@ -2,7 +2,7 @@ export function initGhosts() {
   var ghosts = [];
 
   var Spirit = { name: "Spirit", id: 1, evidences: [1,3,6], Str: "nothing", Weak: "Smudge" };
-  var Wraith = { name: "Wraith", id: 2, evidences: [1,3,7], Str: "No footprints, Goes through walls", Weak: "Salt" };
+  var Wraith = { name: "Wraith", id: 2, evidences: [1,3,7], Str: "No footprints, Sees through doors", Weak: "Salt" };
   var Phantom = { name: "Phantom", id: 3, evidences: [3,5,7], Str: "Lowers sanity", Weak: "Photo" };
   var Poltergeist = { name: "Poltergeist", id: 4, evidences: [3,5,6], Str: "Throws stuff", Weak: "Empty rooms" };
   var Banshee = { name: "Banshee", id: 5, evidences: [2,5,7], Str: "Picks one target", Weak: "Crucifix" };

@@ -17,6 +17,7 @@ class MainWindow extends Component {
       selectedEvidence: [],
       selectedGhost: 0,
       possibleGhosts: initGhosts(),
+      possibleEvidence: initEvidence(),
     };
   }
 
@@ -57,15 +58,24 @@ class MainWindow extends Component {
         possibleGhostsTemp.push(this.state.ghostList[i]);
       }
     }
-    this.setState({ possibleGhosts: possibleGhostsTemp });
+    this.setState({ possibleGhosts: possibleGhostsTemp }, this.checkPossibleEvidence);
   }
 
-  // printTile() {
-  //   console.log(this.state.selectedGhost);
-  // }
+  checkPossibleEvidence() {
+    let possibleEvidenceSet = new Set();
+    this.state.possibleGhosts.forEach(ghost => ghost.evidences.forEach(evidence => possibleEvidenceSet.add(evidence)));
+    let possibleEvidenceTemp = [];
+    this.state.evidence.map(evidence => {
+      if(possibleEvidenceSet.has(evidence.id)) {
+        possibleEvidenceTemp.push(evidence);
+      };
+    });
+    this.setState({ possibleEvidence: possibleEvidenceTemp });
+  }
 
   handleClear(event) {
-    this.setState({ selectedEvidence: [], selectedGhost: 0 });
+    this.setState({ selectedEvidence: [], selectedGhost: 0,
+      ghostList: initGhosts() }, this.checkPossibleGhosts);
     event.preventDefault();
   }
 
@@ -77,7 +87,7 @@ class MainWindow extends Component {
           <button className="btn clearButton" onClick={this.handleClear.bind(this)}>Clear Evidence</button>
         </div>
         <div className="row evidences">
-          {this.state.evidence.map(evidence => {
+          {this.state.possibleEvidence.map(evidence => {
             return <Evidence key={evidence.id} evidence={evidence} evidenceSelector={this.handleEvidenceSelection} 
               selectedEvidence={this.state.selectedEvidence} selectedGhost={this.state.ghostList[this.state.selectedGhost - 1]} />;
           })}
