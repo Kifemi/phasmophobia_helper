@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { initGhosts, initEvidence } from '../data_manager';
 import Evidence from './evidence';
 import Ghost from './ghost';
+import Timer from './timer';
 
 import "../styles/main_window.css";
 
@@ -59,13 +60,22 @@ class MainWindow extends Component {
     this.setState({ possibleGhosts: possibleGhostsTemp });
   }
 
-  printTile() {
-    console.log(this.state.selectedGhost);
+  // printTile() {
+  //   console.log(this.state.selectedGhost);
+  // }
+
+  handleClear(event) {
+    this.setState({ selectedEvidence: [], selectedGhost: 0 });
+    event.preventDefault();
   }
 
   render() {
     return (
       <div className='container'>
+        <div className="row tools">
+          <Timer />
+          <button className="btn clearButton" onClick={this.handleClear.bind(this)}>Clear Evidence</button>
+        </div>
         <div className="row evidences">
           {this.state.evidence.map(evidence => {
             return <Evidence key={evidence.id} evidence={evidence} evidenceSelector={this.handleEvidenceSelection} 
