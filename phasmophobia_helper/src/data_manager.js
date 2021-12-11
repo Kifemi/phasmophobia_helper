@@ -22,8 +22,9 @@ export function initGhosts() {
   var Raiju = { name: "Raiju", id: 18, evidences: [1,2,7], Str: "Faster near electrical devices", Weak: "Distrupts electronics" };
   var TheTwins = { name: "Twins", id: 19, evidences: [1,3,4], Str: "Both twins can hunt", Weak: "Often two interactions at the same time" };
   var Yokai = { name: "Yokai", id: 20, evidences: [2,3,7], Str: "Talking near it may cause hunt", Weak: "Limited hearing during hunt" };
+  var Mimic = { name: "Mimic", id: 21, evidences: [3,4,5], Str: "Copies other ghosts", Weak: "Orbs follow it"};
   ghosts.push(Spirit, Wraith, Phantom, Poltergeist, Banshee, Jinn, Mare, Revenant, Shade, Demon, Yurei, Oni, Goryo, Hantu, Myling, Obake,
-    Onryo, Raiju, TheTwins, Yokai);
+    Onryo, Raiju, TheTwins, Yokai, Mimic);
 
   return ghosts;
 }
