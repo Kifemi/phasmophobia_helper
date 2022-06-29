@@ -23,8 +23,11 @@ export function initGhosts() {
   var TheTwins = { name: "Twins", id: 19, evidences: [1,3,4], Str: "Both twins can hunt", Weak: "Often two interactions at the same time" };
   var Yokai = { name: "Yokai", id: 20, evidences: [2,3,7], Str: "Talking near it may cause hunt", Weak: "Limited hearing during hunt" };
   var Mimic = { name: "Mimic", id: 21, evidences: [3,4,5], Str: "Copies other ghosts", Weak: "Orbs follow it"};
+  var Deogen = { name: "Deogen", id: 22, evidences: [3,6,7], Str: "Knows your location", Weak: "Slow when near the player"};
+  var Moroi = { name: "Moroi", id: 23, evidences: [3,4,6], Str: "Faster at low player sanity", Weak: "Blind from smudging lasts longer"}
+  var Thaye = { name: "Thaye", id: 24, evidences: [2,6,7], Str: "Active in the beginning", Weak: "Becomes quieter and slower"}
   ghosts.push(Spirit, Wraith, Phantom, Poltergeist, Banshee, Jinn, Mare, Revenant, Shade, Demon, Yurei, Oni, Goryo, Hantu, Myling, Obake,
-    Onryo, Raiju, TheTwins, Yokai, Mimic);
+    Onryo, Raiju, TheTwins, Yokai, Mimic, Deogen, Moroi, Thaye);
 
   return ghosts;
 }
@@ -38,7 +41,7 @@ export function initEvidence() {
   var freezingTemp = { name: "Freezing Temperatures", id: 4 };
   var fingerprints = { name: "Fingerprints", id: 5 };
   var ghostWriting = { name: "Ghost Writing", id: 6 };
-  var dotsProjector = { name: "D.O.T.S Prohjector", id: 7}
+  var dotsProjector = { name: "D.O.T.S Projector", id: 7}
   evidences.push(emf5, ghostOrb, spiritBox,  freezingTemp, fingerprints, ghostWriting, dotsProjector);
 
   return evidences;
