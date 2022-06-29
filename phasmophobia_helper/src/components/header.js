@@ -1,15 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import '../styles/header.css';
 
-class Header extends Component {
-  render() {
-    return(
-      <div className="header">
-        Phasmophobia Helper
-      </div>
-    );
-  };
+export default function Header() {
+  return(
+    <div className="header">
+      Phasmophobia Helper
+    </div>
+  );
 }
 
-export default Header;
+// OLD CLASS BASED COMPONENT
+// class Header extends Component {
+//   render() {
+//     return(
+//       <div className="header">
+//         Phasmophobia Helper
+//       </div>
+//     );
+//   };
+// }
+
+// export default Header;
