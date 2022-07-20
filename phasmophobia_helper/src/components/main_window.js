@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { initGhosts, initEvidence } from '../data_manager';
+import { ghosts, evidences } from '../data_manager';
 import Evidence from './evidence';
 import Ghost from './ghost';
 import Timer from './timer';
@@ -12,12 +12,12 @@ class MainWindow extends Component {
     super(props);
 
     this.state = {
-      evidence: initEvidence(),
-      ghostList: initGhosts(),
+      evidenceList: evidences,
+      ghostList: ghosts,
       selectedEvidence: [],
       selectedGhost: 0,
-      possibleGhosts: initGhosts(),
-      possibleEvidence: initEvidence(),
+      possibleGhosts: ghosts,
+      possibleEvidence: evidences
     };
   }
 
@@ -36,13 +36,9 @@ class MainWindow extends Component {
     };
   }
 
-  handleGhostSelection = (ghost) => {
-    if(this.state.selectedGhost === ghost.id) {
-      this.setState({ selectedGhost: 0 });
-    } else {
-      let selectedGhostTemp = ghost.id;
-      this.setState({ selectedGhost: selectedGhostTemp });
-    }
+  handleGhostSelection = (ghostId) => {
+    const newGhostId = this.state.selectedGhost === ghostId ? 0 : ghostId;
+    this.setState({ selectedGhost: newGhostId });
   }
 
   checkPossibleGhosts() {
@@ -64,19 +60,17 @@ class MainWindow extends Component {
   checkPossibleEvidence() {
     let possibleEvidenceSet = new Set();
     this.state.possibleGhosts.forEach(ghost => ghost.evidences.forEach(evidence => possibleEvidenceSet.add(evidence)));
-    let possibleEvidenceTemp = [];
-    this.state.evidence.map(evidence => {
-      if(possibleEvidenceSet.has(evidence.id)) {
-        possibleEvidenceTemp.push(evidence);
-      };
-    });
+    let possibleEvidenceTemp = this.state.evidenceList.filter(evidence => possibleEvidenceSet.has(evidence.id));
     this.setState({ possibleEvidence: possibleEvidenceTemp });
   }
 
   handleClear(event) {
-    this.setState({ selectedEvidence: [], selectedGhost: 0,
-      ghostList: initGhosts() }, this.checkPossibleGhosts);
     event.preventDefault();
+    this.setState({ 
+      selectedEvidence: [], 
+      selectedGhost: 0,
+      ghostList: ghosts 
+    }, this.checkPossibleGhosts);
   }
 
   render() {
@@ -88,14 +82,23 @@ class MainWindow extends Component {
         </div>
         <div className="row evidences">
           {this.state.possibleEvidence.map(evidence => {
-            return <Evidence key={evidence.id} evidence={evidence} evidenceSelector={this.handleEvidenceSelection} 
-              selectedEvidence={this.state.selectedEvidence} selectedGhost={this.state.ghostList[this.state.selectedGhost - 1]} />;
+            return <Evidence 
+              key={evidence.id} 
+              evidence={evidence} 
+              evidenceSelector={this.handleEvidenceSelection} 
+              selectedEvidence={this.state.selectedEvidence} 
+              selectedGhost={this.state.ghostList[this.state.selectedGhost - 1]} 
+            />;
           })}
         </div>
         <div className="row ghosts">
           {this.state.possibleGhosts.map(ghost => {
-            return <Ghost key={ghost.id} ghost={ghost} ghostSelector={this.handleGhostSelection} 
-              selectedGhost={this.state.selectedGhost} />;
+            return <Ghost 
+              key={ghost.id} 
+              ghost={ghost} 
+              ghostSelector={this.handleGhostSelection} 
+              selectedGhost={this.state.selectedGhost} 
+            />;
           })}
         </div>
       </div>

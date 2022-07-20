@@ -17,11 +17,11 @@ class Timer extends Component {
         let minutes = Math.floor(secs / 60).toString().padStart(2, "0");
         let seconds = (secs % 60).toString().padStart(2, "0");
 
-        let obj = {
+        let time = {
             "m": minutes,
             "s": seconds,
         };
-        return obj;
+        return time;
     }
 
     componentDidMount() {
